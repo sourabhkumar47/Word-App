@@ -26,6 +26,8 @@ class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val LETTER = "letter"
+        //This is the base URL for a Google search.
+        const val SEARCH_PREFIX = "https://www.google.com/search?q="
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

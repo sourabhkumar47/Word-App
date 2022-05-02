@@ -72,6 +72,7 @@ class LetterAdapter :
         }
     }
 
+
     // Setup custom accessibility delegate to set the text read with
     // an accessibility service
     companion object Accessibility : View.AccessibilityDelegate() {
