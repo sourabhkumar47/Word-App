@@ -1,4 +1,3 @@
-
 package com.example.wordsapp
 
 import android.os.Bundle
@@ -13,6 +12,7 @@ import com.example.wordsapp.databinding.FragmentWordListBinding
 /**
  * Displays a [RecyclerView] of words with search buttons to look them up.
  */
+
 class WordListFragment : Fragment() {
 
     /**
@@ -30,17 +30,7 @@ class WordListFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
     private lateinit var letterId: String
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Retrieve the LETTER from the Fragment arguments
-        arguments?.let {
-            letterId = it.getString(LETTER).toString()
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,7 +45,7 @@ class WordListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = WordAdapter(letterId, requireContext())
+        recyclerView.adapter = WordAdapter(activity?.intent?.extras?.getString(LETTER).toString(), requireContext())
 
         // Adds a [DividerItemDecoration] between items
         recyclerView.addItemDecoration(
@@ -70,4 +60,13 @@ class WordListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        // Retrieve the LETTER from the Fragment arguments
+//        arguments?.let {
+//            letterId = it.getString(LETTER).toString()
+//        }
+//    }
 }
