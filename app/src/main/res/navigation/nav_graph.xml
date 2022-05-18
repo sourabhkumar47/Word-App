@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_wordListFragment_to_letterListFragment"
             app:destination="@id/letterListFragment" />
+        <argument
+            android:name="letter"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/letterListFragment"
