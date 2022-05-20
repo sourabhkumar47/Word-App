@@ -43,10 +43,12 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        //This ensures action bar like menu bar
         setupActionBarWithNavController(navController)
 
     }
 
+    //This methods allow you to handle the up button
     override fun onSupportNavigateUp(): Boolean {
         return super.onSupportNavigateUp() || super.onSupportNavigateUp()
     }
